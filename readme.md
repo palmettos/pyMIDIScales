@@ -1,13 +1,13 @@
 DEPENDENCIES: mechanize
 ```
-\>\>\> browser = scraper.Scraper()
+>>> browser = scraper.Scraper()
 ```
 ```
-\>\>\> browser.get_scale_notes('c', 'major')
+>>> browser.get_scale_notes('c', 'major')
 ['C', 'D', 'E', 'F', 'G', 'A', 'B']
 ```
 ```
-\>\>\> browser.get_scale_chord_links('c', 'major')
+>>> browser.get_scale_chord_links('c', 'major')
 {'Dm13': '/showchord.php?ch=Dm13', 'Gsus4': '/showchord.php?ch=Gsus4', 'Bdim': '
 /showchord.php?ch=Bdim', 'Gsus2': '/showchord.php?ch=Gsus2', 'Fmaj9': '/showchor
 d.php?ch=Fmaj9', 'Fmaj7': '/showchord.php?ch=Fmaj7', 'Csus4': '/showchord.php?ch
@@ -39,7 +39,7 @@ wchord.php?ch=Cmaj13', 'C\\E': '/showchord.php?ch=C\\E', 'C\\G': '/showchord.php
  'Csus4\\F': '/showchord.php?ch=Csus4\\F'}
 ```
 ```
-\>\>\> browser.get_scale_chords('c', 'major')
+>>> browser.get_scale_chords('c', 'major')
 ['C', 'Dm', 'Em', 'F', 'G', 'Am', 'Bdim', 'Csus4', 'Csus2', 'Dsus4', 'Dsus2', 'E
 sus4', 'Fsus2', 'Gsus4', 'Gsus2', 'Asus4', 'Asus2', 'C6', 'Cmaj7', 'Dm6', 'Dm7',
  'D7sus4', 'D7sus2', 'Em7', 'E7sus4', 'F6', 'Fmaj7', 'G6', 'G7', 'G7sus4', 'G7su
@@ -49,7 +49,7 @@ F6/9', 'Fmaj9', 'Fmaj13', 'G6/9', 'G9', 'G13', 'G9sus4', 'G9sus2', 'Am9', 'Am11'
 , 'A9sus4', 'A9sus2', 'C6\\G', 'C6/9\\E', 'C6/9\\G', 'Cmaj7\\G', 'Cmaj9\\E']
 ```
 ```
-\>\>\> for chord in browser.get_scale_chords('c', 'major'):
+>>> for chord in browser.get_scale_chords('c', 'major'):
 ...  print(chord+': '+str(browser.get_chord_notes(chord)))
 ...
 C: ['C', 'E', 'G']
@@ -119,7 +119,7 @@ Cmaj7\G: ['C', 'E', 'G', 'B']
 Cmaj9\E: ['C', 'E', 'G', 'B', 'D']
 ```
 ```
-\>\>\> for note in browser.get_chord_notes('D#m'):
+>>> for note in browser.get_chord_notes('D#m'):
 ...  print(note+': '+str(browser.get_note_midi_value(note)))
 ...
 D#: 63
