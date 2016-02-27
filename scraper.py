@@ -62,7 +62,7 @@ class Scraper:
 		notes = re.sub(' ', '', notes.group(0))
 		return notes.split(';')[:-1]
 
-	def get_scale_chord_links(self, key, scale):
+	def _get_scale_chord_links(self, key, scale):
 		page = self._search(key, scale)
 		pat = r'(\/showchord\.php\?ch=.*?)"'
 		links = re.findall(pat, page)
