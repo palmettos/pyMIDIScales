@@ -1,5 +1,8 @@
 DEPENDENCIES: mechanize
 ```
+pip install mechanize
+```
+```
 >>> import scraper
 >>> browser = scraper.Scraper()
 ```
