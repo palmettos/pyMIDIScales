@@ -11,6 +11,21 @@ pip install mechanize
 ['C', 'D', 'E', 'F', 'G', 'A', 'B']
 ```
 ```
+>>> br.get_available_scales()
+['major', 'melodic minor', 'ionian', 'harmonic minor', 'natural minor', 'dorian'
+, 'phrygian', 'lydian', 'mixolydian', 'aeolian', 'locrian', 'blues', 'diminished
+ (halftone - wholetone)', 'diminished (wholetone - halftone)', 'whole tone', 'ma
+jor pentatonic', 'minor pentatonic', 'augmented', 'leading whole tone', 'double
+harmonic', 'overtone', 'six tone symmetrical', 'altered', 'altered bb7', 'enigma
+tic', 'dorian b2', 'augmented lydian', 'lydian b7', 'mixolydian b6', 'locrian 2'
+, 'locrian 6', 'augmented ionian', 'dorian #4', 'major phrygian', 'lydian #9', '
+diminished lydian', 'minor lydian', 'arabian', 'balinese', 'byzantine', 'chinese
+', 'mongolian', 'egyptian', 'eight tone spanish', 'hindu', 'hirajoshi', 'hungari
+an major', 'hungarian minor (gipsy)', 'ichikosucho', 'kumoi', 'mohammedan', 'neo
+politan', 'neopolitan major', 'neopolitan minor', 'pelog', 'persian', 'prometheu
+s', 'prometheus neopolitan', 'purvi theta', 'todi theta']
+```
+```
 >>> browser.get_scale_chords('c', 'major')
 ['C', 'Dm', 'Em', 'F', 'G', 'Am', 'Bdim', 'Csus4', 'Csus2', 'Dsus4', 'Dsus2', 'E
 sus4', 'Fsus2', 'Gsus4', 'Gsus2', 'Asus4', 'Asus2', 'C6', 'Cmaj7', 'Dm6', 'Dm7',

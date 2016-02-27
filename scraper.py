@@ -74,6 +74,13 @@ class Scraper:
 			link_dict[key.group(1)] = links[i]
 		return link_dict
 
+	def get_available_scales(self):
+		nav_page = 'scalenav.php'
+		page = self.browser.open(self.root_url+nav_page).read()
+		pat = r'shscalesbytype\.php\?sname=(.*?)"'
+		scales = re.findall(pat, page)
+		return scales
+
 	def get_scale_chords(self, key, scale):
 		page = self._search(key, scale)
 		pat = r'(\/showchord\.php\?ch=.*?)"'
