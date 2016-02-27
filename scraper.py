@@ -58,7 +58,7 @@ class Scraper:
 			+'(\w#?\/?\w?\w?;)\s?(\w#?\/?\w?\w?;)\s?'\
 			+'(\w#?\/?\w?\w?;)\s?(\w#?\/?\w?\w?;)\s?'\
 			+'(\w#?\/?\w?\w?;)\s?(\w#?\/?\w?\w?;)\s?'
-		notes = re._search(pat, page)
+		notes = re.search(pat, page)
 		notes = re.sub(' ', '', notes.group(0))
 		return notes.split(';')[:-1]
 
@@ -69,7 +69,7 @@ class Scraper:
 		link_dict = {}
 		for i in range(0, len(links)):
 			pat = r'ch=(.*)'
-			key = re._search(pat, links[i])
+			key = re.search(pat, links[i])
 			links[i] = links[i].replace('\\\\', '\\')
 			link_dict[key.group(1)] = links[i]
 		return link_dict
@@ -81,7 +81,7 @@ class Scraper:
 		chords = []
 		for i in range(0, len(links)):
 			pat = r'ch=(.*)'
-			key = re._search(pat, links[i])
+			key = re.search(pat, links[i])
 			links[i] = links[i].replace('\\\\', '\\')
 			links[i] = links[i].replace('%23', '#')
 			chords.append(key.group(1))
@@ -94,7 +94,7 @@ class Scraper:
 		url = self.root_url+chord_link
 		page = self.browser.open(url).read()
 		pat = r'Chord notes:\s?<\/td>\s?<td>\s?'+('(\wb?#?)?\s?'*6)
-		notes = re._search(pat, page)
+		notes = re.search(pat, page)
 		count = 0
 		for note in notes.groups():
 			if note:
