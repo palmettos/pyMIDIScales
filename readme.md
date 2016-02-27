@@ -1,5 +1,6 @@
 DEPENDENCIES: mechanize
 ```
+>>> import scraper
 >>> browser = scraper.Scraper()
 ```
 ```
