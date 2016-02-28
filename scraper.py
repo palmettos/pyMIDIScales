@@ -54,10 +54,7 @@ class Scraper:
 
 	def get_scale_notes(self, key, scale):
 		page = self._search(key, scale)
-		pat = r'(\w#?\/?\w?\w?;)\s?'\
-			+'(\w#?\/?\w?\w?;)\s?(\w#?\/?\w?\w?;)\s?'\
-			+'(\w#?\/?\w?\w?;)\s?(\w#?\/?\w?\w?;)\s?'\
-			+'(\w#?\/?\w?\w?;)\s?(\w#?\/?\w?\w?;)\s?'
+		pat = r'(\w#?\/?\w?\w?;)\s?'*7
 		notes = re.search(pat, page)
 		notes = re.sub(' ', '', notes.group(0))
 		return notes.split(';')[:-1]
