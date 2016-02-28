@@ -52,13 +52,6 @@ class Scraper:
 		self._build_url()
 		return self.browser.open(self.goto).read()
 
-	def get_scale_notes(self, key, scale):
-		page = self._search(key, scale)
-		pat = r'(\w#?\/?\w?\w?;)\s?'*7
-		notes = re.search(pat, page)
-		notes = re.sub(' ', '', notes.group(0))
-		return notes.split(';')[:-1]
-
 	def _get_scale_chord_links(self, key, scale):
 		page = self._search(key, scale)
 		pat = r'(\/showchord\.php\?ch=.*?)"'
@@ -70,6 +63,13 @@ class Scraper:
 			links[i] = links[i].replace('\\\\', '\\')
 			link_dict[key.group(1)] = links[i]
 		return link_dict
+		
+	def get_scale_notes(self, key, scale):
+		page = self._search(key, scale)
+		pat = r'(\w#?\/?\w?\w?;)\s?'*7
+		notes = re.search(pat, page)
+		notes = re.sub(' ', '', notes.group(0))
+		return notes.split(';')[:-1]
 
 	def get_available_scales(self):
 		nav_page = 'scalenav.php'
