@@ -3,7 +3,7 @@ DEPENDENCIES: mechanize
 pip install mechanize
 ```
 ```
->>> import scraper
+>>> from pyScales import scraper
 >>> browser = scraper.Scraper()
 ```
 ```
