@@ -99,11 +99,7 @@ class Scraper:
         page = self.browser.open(url).read()
         pat = r'Chord notes:\s?<\/td>\s?<td>\s?'+('(\wb?#?)?\s?'*6)
         notes = re.search(pat, page)
-        count = 0
-        for note in notes.groups():
-            if note:
-                count += 1
-        return list(notes.groups())[0:count]
+        return [note for note in notes.groups() if note]
 
     def get_note_midi_value(self, note):
         notes = {
